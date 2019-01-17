@@ -1,0 +1,16 @@
+# Core pipeline
+duckdb>=1.1.0,<2.0.0
+pandas>=2.2.0,<3.0.0
+pyyaml>=6.0.0,<7.0.0
+
+# Transformations
+dbt-core>=1.8.0,<2.0.0
+dbt-duckdb>=1.8.0,<2.0.0
+
+# Forecasting
+statsmodels>=0.14.0,<1.0.0
+scipy>=1.11.0,<2.0.0
+
+# Dashboard
+streamlit>=1.32.0,<2.0.0
+plotly>=5.18.0,<6.0.0
