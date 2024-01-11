@@ -1,0 +1,9 @@
+# Local DuckDB profile.
+revenue_attribution:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "{{ env_var('DUCKDB_PATH', 'warehouse/warehouse.duckdb') }}"
+      threads: 4
+      schema: main
