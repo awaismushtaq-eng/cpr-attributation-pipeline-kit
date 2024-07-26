@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: int_user_attribution
+    description: >
+      Per-user attribution resolution for first-touch and last-touch models,
+      including campaign/content best-effort links and confidence flags.
+    columns:
+      - name: user_id
+        tests: [unique, not_null]
+      - name: attr_channel_first_touch
+        tests: [not_null]
+      - name: attr_channel_last_touch
+        tests: [not_null]
+      - name: attribution_confidence
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['high', 'medium', 'low']
+
+  - name: int_user_revenue
+    description: >
+      Revenue rows stitched to resolved signup attribution (journey stitch).
+      Attribution is fixed at signup time and inherited by all revenue months.
+    columns:
+      - name: revenue_id
+        tests: [unique, not_null]
+      - name: user_id
+        tests: [not_null]
+      - name: attr_channel_last_touch
+        tests: [not_null]
+      - name: attr_channel_first_touch
+        tests: [not_null]
