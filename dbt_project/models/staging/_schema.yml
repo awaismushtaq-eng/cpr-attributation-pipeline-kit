@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: stg_content_performance
+    description: Cleaned content performance events.
+    columns:
+      - name: content_id
+        tests: [unique, not_null]
+      - name: channel
+        tests: [not_null]
+      - name: publish_date
+        tests: [not_null]
+
+  - name: stg_user_signups
+    description: Cleaned signup + raw attribution fields.
+    columns:
+      - name: user_id
+        tests: [unique, not_null]
+      - name: signup_date
+        tests: [not_null]
+      - name: company_id
+        tests: [not_null]
+
+  - name: stg_portfolio_revenue
+    description: Cleaned monthly revenue facts.
+    columns:
+      - name: revenue_id
+        tests: [unique, not_null]
+      - name: user_id
+        tests: [not_null]
+      - name: revenue_amount
+        tests: [not_null]
+
+  - name: stg_campaign_metadata
+    description: Cleaned campaign dimension with join slug.
+    columns:
+      - name: campaign_id
+        tests: [unique, not_null]
+      - name: campaign_slug
+        tests: [unique, not_null]
