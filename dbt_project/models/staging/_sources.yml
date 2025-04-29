@@ -1,0 +1,27 @@
+version: 2
+
+sources:
+  - name: raw
+    description: Raw layer loaded by scripts/load_raw.py from CSV/JSON sources.
+    schema: raw
+    tables:
+      - name: content_performance
+        description: Content metrics by channel with optional UTMs.
+        columns:
+          - name: content_id
+            tests: [unique, not_null]
+      - name: user_signups
+        description: Signup events with first/last touch and UTM attribution fields.
+        columns:
+          - name: user_id
+            tests: [unique, not_null]
+      - name: portfolio_revenue
+        description: Monthly revenue per user per company.
+        columns:
+          - name: revenue_id
+            tests: [unique, not_null]
+      - name: campaign_metadata
+        description: Campaign budget, dates, channel, optional target company.
+        columns:
+          - name: campaign_id
+            tests: [unique, not_null]
