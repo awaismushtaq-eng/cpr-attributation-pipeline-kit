@@ -11,7 +11,6 @@ __pycache__/
 # OS / IDE
 .DS_Store
 .idea/
-.vscode/
 
 # Warehouse & generated outputs
 warehouse/*.duckdb
@@ -27,5 +26,5 @@ dbt_project/logs/
 dbt_project/.user.yml
 
 # Environment
-.env
-.env.*
+config.bat
+node_modules
